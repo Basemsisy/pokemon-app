@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "../store/api/pokemonApi";
 import PageHeader from "./PageHeader";
+import PokemonDetailsRow from "./PokemonDetailsRow";
 
 const PokemonDetails = () => {
   const { name } = useParams<{ name: string }>();
@@ -35,25 +36,18 @@ const PokemonDetails = () => {
         <div className="border-t border-b border-gray-200 py-4">
           <table className="w-full">
             <tbody>
-              <tr className="border-b border-gray-200">
-                <td className="py-3 text-gray-600 font-medium">Name</td>
-                <td className="py-3 text-right capitalize">{data.name}</td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-3 text-gray-600 font-medium">Height</td>
-                <td className="py-3 text-right">
-                  {(data.height / 10).toFixed(1)} m
-                </td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-3 text-gray-600 font-medium">Weight</td>
-                <td className="py-3 text-right">
-                  {(data.weight / 10).toFixed(1)} kg
-                </td>
-              </tr>
-              <tr>
-                <td className="py-3 text-gray-600 font-medium">Types</td>
-                <td className="py-3 text-right">
+              <PokemonDetailsRow label={"Name"} value={data.name} />
+              <PokemonDetailsRow
+                label={"Height"}
+                value={`${(data.height / 10).toFixed(1)} m`}
+              />
+              <PokemonDetailsRow
+                label={"Weight"}
+                value={`${(data.weight / 10).toFixed(1)} kg`}
+              />
+              <PokemonDetailsRow
+                label={"Types"}
+                value={
                   <div className="flex flex-wrap justify-end gap-2">
                     {data.types.map((typeInfo) => (
                       <span
@@ -64,8 +58,8 @@ const PokemonDetails = () => {
                       </span>
                     ))}
                   </div>
-                </td>
-              </tr>
+                }
+              />
             </tbody>
           </table>
         </div>

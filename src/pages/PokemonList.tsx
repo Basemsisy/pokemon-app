@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useGetPokemonListQuery } from "../store/api/pokemonApi";
 import { useNavigate } from "react-router-dom";
-import PageHeader from "./PageHeader";
+import PageHeader from "../components/PageHeader";
 
 const PokemonList = () => {
   const [limit, setLimit] = useState(20);

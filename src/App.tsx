@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import PokemonList from "./components/PokemonList";
-import PokemonDetails from "./components/PokemonDetails";
+import PokemonList from "./pages/PokemonList";
+import PokemonDetails from "./pages/PokemonDetails";
 function App() {
   return (
     <BrowserRouter>

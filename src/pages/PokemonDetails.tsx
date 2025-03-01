@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "../store/api/pokemonApi";
-import PageHeader from "./PageHeader";
-import PokemonDetailsRow from "./PokemonDetailsRow";
+import PageHeader from "../components/PageHeader";
+import PokemonDetailsRow from "../components/PokemonDetailsRow";
 
 const PokemonDetails = () => {
   const { name } = useParams<{ name: string }>();

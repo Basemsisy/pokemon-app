@@ -30,7 +30,7 @@ A React application that retrieves and displays Pokemon data from the PokeAPI. T
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/pokemon-app.git
+   git clone https://github.com/basemsisy/pokemon-app.git
    cd pokemon-app
    ```
 
@@ -43,6 +43,11 @@ A React application that retrieves and displays Pokemon data from the PokeAPI. T
 3. Start the development server:
    ```bash
    npm run dev
+   ```
+   Start the application against the specified BASE API
+   URLs:
+   ```shell
+   VITE_API_BASE_URL=http://api.example.com npm run dev
    ```
 
 The application will be available at `http://localhost:5173`.
